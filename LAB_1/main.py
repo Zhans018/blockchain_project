@@ -1,6 +1,7 @@
 import time
 import tkinter as tk
 
+
 def custom_hash(data):
     hash_value = 0
     for char in data:  # Обрабатываем каждый символ строки
@@ -59,11 +60,19 @@ class BlockExplorerGUI:
     def create_ui(self):
         for i, block in enumerate(self.blockchain.chain):
             block_info = f"Блок {i}\nХэш: {block.hash}\nВремя: {block.timestamp}\nДанные: {block.data}"
-            label = tk.Label(self.root, text=block_info, relief="solid", borderwidth=2, padx=10, pady=10)
+            label = tk.Label(
+                self.root,
+                text=block_info,
+                relief="solid",
+                borderwidth=2,
+                padx=10,
+                pady=10,
+            )
             label.pack(pady=5)
 
     def run(self):
         self.root.mainloop()
+
 
 # Демонстрация
 blockchain = Blockchain()
